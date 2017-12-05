@@ -1,3 +1,3 @@
-fd = open("test.xml","w+")
+fd = open("test.txt","w+")
 fd.write("fudge")
 fd.close()
