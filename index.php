@@ -29,6 +29,7 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 							$command = escapeshellcmd("python -3 python\Test.py");
 							$output = shell_exec($command);
 							echo $output;
+							echo "hello";
 				}
 	?>
 				
