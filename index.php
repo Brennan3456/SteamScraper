@@ -20,21 +20,8 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<?php 	
-						
-						
-				if(isset($_POST['Run_btn']))
-				{
 	
-							$command = escapeshellcmd("python -3 python\Test.py");
-							$output = shell_exec($command);
-							echo $output;
-							echo "hello";
-				}
-	?>
-				
-			
-	
+
 	<form method="post" action="index.php">
 		<div class="container">
 			<div class="row">
@@ -107,7 +94,43 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 				<span class="sr-only">Next</span>
 			</a>
 		</div>
-
+		
+			
+			<?php 
+	if(isset($_POST['Run_btn']))
+	{
+				$xml=simplexml_load_file("games.xml") or die("Error: Cannot create object");
+				foreach($xml->children() as $games) {  ?>
+			
+			<div class="col-sm-4 steam_stream">
+			<div class="row">
+				
+				<div class="content_container">
+					<div class="title">
+						<h6><?php echo $games->GameName; ?><h6>
+					</div>
+					<div class = "price">
+						<p>€ <?php echo $games->GamePrice; ?></p>
+					</div>
+						<!-- Above Image content -->
+							<a href="<?php echo $games->ImgUrl; ?>"><img class="img-responsive" src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="picture"></a>
+						<!-- Below Image content -->
+					<div class="genre">
+						<h6><?php echo $games->GameGenre; ?></h6>	
+					</div>
+					<div class="masterdiv">
+						<div class="description">
+							<p>This game is the game to beat all games, it is god among games</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+				
+	<?php }} ?>
+			
+			
+		
 			
 <!-- 			Stream List -->
 		
@@ -115,7 +138,6 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 	<?php 
 	if(isset($_POST['Get_btn']))
 	{
-
 	$sqlGet = "SELECT * FROM GameInfo";
 	$sqldata = mysqli_query($db, $sqlGet) or die('you done fucked');
 	while($row = mysqli_fetch_array($sqldata, MYSQLI_ASSOC)){  ?>
