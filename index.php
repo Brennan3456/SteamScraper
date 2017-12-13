@@ -21,15 +21,15 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 </head>
 <body>
 	
-
+	
 	<form method="post" action="index.php">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="page-header">
-						<h1>Steam Reviews</h1>
-
-						<input type="text" name="search" placeholder="Search..">
+						<div id="logo">
+		 					<img id="Logo" src="img/Logo.png" alt="missing logo"> 
+						</div>
 						<button name="Get_btn" type="submit" value="HTML">Get Data</button>
 						<button name="Run_btn" type="submit" value="HTML">Run Data</button>
 						<button name="PriceAsc_btn" type="submit" value="HTML">Cheapest</button>
