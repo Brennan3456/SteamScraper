@@ -42,58 +42,7 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 				</div>
 			</div>
 			
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<!-- Indicators -->
-			<ol class="carousel-indicators">
-				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
-				<li data-target="#myCarousel" data-slide-to="4"></li>
-			</ol>
-			<!-- Wrapper for slides -->
-			<div class="carousel-inner">
-				<div class="item active">
-					<a href="#"><img src="img/ex1.jpg" alt=featured></a>
-					<div class="carousel-caption">
-						<h3>Title</h3>
-					</div>
-				</div>
-				<div class="item">
-					<a href="#"><img src="img/ex2.jpg" alt=featured></a>
-					<div class="carousel-caption">
-						<h3>Title</h3>
-					</div>
-				</div>
-				<div class="item">
-					<a href="#"><img src="img/ex3.jpg" alt=featured></a>
-					<div class="carousel-caption">
-						<h3>Title</h3>
-					</div>
-				</div>
-				<div class="item">
-					<a href="#"><img src="img/ex4.jpg" alt=featured></a>
-					<div class="carousel-caption">
-						<h3>Title</h3>
-					</div>
-				</div>
-				<div class="item">
-					<a href="#"><img src="img/ex5.jpg" alt=featured></a>
-					<div class="carousel-caption">
-						<h3>Title</h3>
-					</div>
-				</div>
-			</div>
-			<!-- Left and right controls -->
-			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-				<span class="sr-only">Previous"</span>
-			</a>
-			<a class="right carousel-control" href="#myCarousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
+		
 		
 			
 			<?php 
@@ -102,27 +51,25 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 				$xml=simplexml_load_file("games.xml") or die("Error: Cannot create object");
 				foreach($xml->children() as $games) {  ?>
 			
-			<div class="col-sm-4 steam_stream">
+			<div class="col-sm-4">
 			<div class="row">
 				
 				<div class="content_container">
 					<div class="title">
-						<h6><?php echo $games->GameName; ?><h6>
+						<?php echo $games->GameName; ?>
 					</div>
 					<div class = "price">
-						<p>€ <?php echo $games->GamePrice; ?></p>
+					€<?php echo $games->GamePrice; ?>
+					</div>
+					<div class = "date">
+						<?php echo $games->GameDate; ?>
 					</div>
 						<!-- Above Image content -->
-							<a href="<?php echo $games->ImgUrl; ?>"><img class="img-responsive" src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg" alt="picture"></a>
+					
+					<div class = "image">		
+						<a href="<?php echo $games->GameLink; ?>"><img class="img-responsive" src="<?php echo $games->GameImgUrl;?>" alt="picture"></a>
+					</div>
 						<!-- Below Image content -->
-					<div class="genre">
-						<h6><?php echo $games->GameGenre; ?></h6>	
-					</div>
-					<div class="masterdiv">
-						<div class="description">
-							<p>This game is the game to beat all games, it is god among games</p>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

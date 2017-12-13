@@ -9,7 +9,7 @@ input[type=text]:focus {
     width: 100%;
 }
 body {
-background-color: #211616; 
+background: linear-gradient(#001a33,#004f99);
 
 
 }
@@ -21,56 +21,59 @@ background: url(../img/bg.jpg) no-repeat center center fixed;
 -o-background-size: cover;
 background-size: cover;
 */
+
 color:white;
 }
 
 .title{
-  color: green;
-	font-size:1vw;
-	float: left;
+  font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	border-bottom: 3px solid #99b1ff;
+	font-size: 17px;
+	test-align: left;
+	width: 100%;
+	white-space: nowrap;
+  overflow: hidden;
+	
+	font-style: normal;
 }
 
 .price{
-	float: right;
-	font-size:1vw;
-}
-
-.masterdiv{
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	font-size: 17px;
+	border-bottom: 3px solid #99b1ff;
+	float: left;
+	white-space: nowrap;
+  overflow: hidden;
 	
-	overflow: auto;
-	background-color: orange;
-	height: 50px;
-
+	font-style: normal;
 }
 
-.description{
-  height: 50px;
-	width: auto;
-	overflow: hidden, auto;
+.date{
+	font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+	border-bottom: 3px solid #99b1ff;
+	font-size: 17px;
+	text-align: right;
+	white-space: nowrap;
+  overflow: hidden;
+	font-style: normal;
 	
+}
+.img-responsive{
+	padding-top: 2%;
+	width: 100%;
+	height: 100%;
+}
+
+.row{
+	
+	margin: 3%;
 	
 }
 
-.genre{
-	font-size:1vw;
-  color: pink;
-}
-
-
-.steam_stream{
-
- 	padding-top: 2%;
-	width: 25%;
-	heigth: 25%;
-	padding-right: 2.5%;
-	padding-left: 2.5%;
-}
-
-.content_container
-{
-	
-	background-color: #737373;
-	padding: 2%;
+.content_container{
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	background-color: #334d4d;
+	padding: 1%;
 }
 
  
