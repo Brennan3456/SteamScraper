@@ -46,8 +46,7 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 		
 			
 			<?php 
-	if(isset($_POST['Run_btn']))
-	{
+	
 				$xml=simplexml_load_file("games.xml") or die("Error: Cannot create object");
 				foreach($xml->children() as $games) {  ?>
 			
@@ -74,7 +73,7 @@ $db = mysqli_connect("localhost","root","pass","Steam");
 			</div>
 		</div>
 				
-	<?php }} ?>
+	<?php } ?>
 			
 			
 		
